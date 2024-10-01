@@ -6,3 +6,6 @@
  * Be able to clear all tasks
  * Add some validation for form
  */
+
+// load Source Code Pro google font
+document.body.style.fontFamily = 'Source Code Pro', 'monospace';
