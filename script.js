@@ -45,13 +45,34 @@ function handleTaskSubmit(event) {
         return; // Exit if input is invalid
     }
 
-    // Create task item using createElement
+  // Create task item using createElement and appendChild
     const taskItem = document.createElement('li');
-    taskItem.textContent = `${taskText} (${priority})`; // Display task text and priority
+    taskItem.textContent = taskText;
+    taskItem.classList.add(`${priority}-priority`);
 
-    // Append task item to the task list
-    taskList.appendChild(taskItem);
+  // Add checkbox to mark task as complete
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.addEventListener('change', function() {
+    if (checkbox.checked) {
+        markTaskAsCompleted(taskItem);
+    }
+    });
+    taskItem.prepend(checkbox);
 
-    // Clear input field after submission
+
+  // Add delete button
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', function() {
+    taskItem.remove();
+    });
+    taskItem.appendChild(deleteButton);
+
+  // Append task item to fragment and then to the task list
+    fragment.appendChild(taskItem);
+    taskList.appendChild(fragment);
+
+  // Clear input field after submission
     taskInput.value = '';
 }
