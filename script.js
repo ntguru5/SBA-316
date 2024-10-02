@@ -67,6 +67,13 @@ function handleTaskSubmit(event) {
     taskItem.remove();
     });
     taskItem.appendChild(deleteButton);
+    deleteButton.style.marginLeft = '5px'; // Add spacing between task text and button
+    // deleteButton.style.padding = '5px 2px';
+    deleteButton.style.backgroundColor = 'red'; // Red button
+    deleteButton.style.color = 'white';
+    deleteButton.style.border = 'none';
+    deleteButton.style.borderRadius = '7px';
+    deleteButton.style.cursor = 'pointer';
 
   // Append task item to fragment and then to the task list
     fragment.appendChild(taskItem);
