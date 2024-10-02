@@ -5,16 +5,17 @@
 
 .medium-priority {
     color: orange;
+    font-weight: bold;
 }
 
 .low-priority {
     color: green;
 }
 
-button {
-    margin-left: 10px;
-}
-
 .hidden {
     display: none;
+}
+
+li {
+    padding: 10px;
 }

@@ -25,6 +25,34 @@ const taskList = document.getElementById('taskList');
 const completedTaskList = document.getElementById('completedTaskList');
 const clearTaskBtn = document.querySelector('#clearTaskBtn');
 
+// Apply styles to buttons
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => {
+    // Set base styles
+    button.style.padding = '10px 15px';
+    button.style.borderRadius = '7px';
+    button.style.border = 'none';
+    button.style.backgroundColor = 'green';
+    button.style.color = '#fff';
+    button.style.fontSize = '15px';
+    button.style.cursor = 'pointer';
+    button.style.transition = 'background-color 0.3s ease, box-shadow 0.3s ease';
+    button.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+
+    // Hover effect: Change background color and box shadow on mouse over
+    button.addEventListener('mouseover', () => {
+    button.style.backgroundColor = '#6200ea';
+    button.style.boxShadow = '0 6px 10px rgba(0, 0, 0, 0.15)';
+    });
+
+    // Reset styles on mouse out
+    button.addEventListener('mouseout', () => {
+    button.style.backgroundColor = 'green';
+    button.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+    });
+});
+
 // event listeners
 taskForm.addEventListener('submit', handleTaskSubmit);
 clearTaskBtn.addEventListener('click', clearCompletedTasks);
@@ -68,8 +96,8 @@ function handleTaskSubmit(event) {
     });
     taskItem.appendChild(deleteButton);
     deleteButton.style.marginLeft = '5px'; // Add spacing between task text and button
-    // deleteButton.style.padding = '5px 2px';
-    deleteButton.style.backgroundColor = 'red'; // Red button
+    deleteButton.style.padding = '5px 10px';
+    deleteButton.style.backgroundColor = 'rgb(250, 100, 100)'; // Red button
     deleteButton.style.color = 'white';
     deleteButton.style.border = 'none';
     deleteButton.style.borderRadius = '7px';
