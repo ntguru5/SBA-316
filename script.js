@@ -60,7 +60,6 @@ function handleTaskSubmit(event) {
     });
     taskItem.prepend(checkbox);
 
-
   // Add delete button
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
@@ -75,4 +74,28 @@ function handleTaskSubmit(event) {
 
   // Clear input field after submission
     taskInput.value = '';
+}
+
+// Mark task as complete
+function markTaskAsCompleted(taskItem) {
+    taskItem.remove();
+    completedTaskList.appendChild(taskItem);
+
+    // add strikethrough styling
+    taskItem.style.textDecoration = 'line-through';
+    taskItem.querySelector('input[type="checkbox"]').remove();
+
+    // show "Clear Completed Tasks" button
+    clearTaskBtn.classList.remove('hidden');
+}
+
+// Function to clear completed tasks
+function clearCompletedTasks() {
+    // Iterate over completed tasks and remove them
+    while (completedTaskList.firstChild) {
+    completedTaskList.removeChild(completedTaskList.firstChild);
+    }
+
+    // Hide the "Clear Completed Tasks" button
+    clearTaskBtn.classList.add('hidden');
 }
