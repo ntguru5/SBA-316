@@ -134,3 +134,10 @@ function clearCompletedTasks() {
     // Hide the "Clear Completed Tasks" button
     clearTaskBtn.classList.add('hidden');
 }
+
+// show an alert based on window size
+window.addEventListener('resize', function() {
+  if (window.innerWidth < 600) {
+    alert('You are in mobile view');
+  }
+});
