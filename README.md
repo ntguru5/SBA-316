@@ -34,7 +34,7 @@ No installation is required. Just open the HTML file in any modern web browser, 
 - Automatically sort tasks by priority.
 
 ## Folder Structure
-├── index.html       Main HTML file
-├── README.md        Project description
-├── script.js        JavaScript functionality
+├── index.html       Main HTML file<br>
+├── README.md        Project description<br>
+├── script.js        JavaScript functionality<br>
 └── styles.css       styling
