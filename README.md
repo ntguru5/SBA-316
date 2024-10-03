@@ -18,6 +18,10 @@ This is a simple task management web application that allows users to add, compl
   - Handling task completion and clearing completed tasks.
   - Using BOM properties like window resize and hash management.
 
+## Browser Object Model (BOM) Usage
+- The app listens for resize events on the window to display alerts when the screen width goes below 600 pixels (mobile view).
+- It uses the location.hash property to manage URL hash navigation for the task app.
+
 ## How to Run the Application
 1. **Download the files**: Make sure you have the HTML, CSS, and JavaScript files.
 2. **Open `index.html`** in your web browser.
@@ -32,6 +36,7 @@ No installation is required. Just open the HTML file in any modern web browser, 
 ## Future Enhancements
 - Add due dates to tasks.
 - Automatically sort tasks by priority.
+- Mobile view alert should go away once you click it.
 
 ## Folder Structure
 ├── index.html       - Main HTML file<br>
